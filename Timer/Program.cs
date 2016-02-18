@@ -14,7 +14,9 @@ namespace Timer
             var mobsters = new List<string> { "Martin", "Håkan", "John", "Petter", "Per", "Åsa" }
                 .OrderBy(a => Guid.NewGuid()).ToList();
             var url = "http://oss.jahed.io/agility/timer.html";
-            var webdriver = new ChromeDriver();
+            var options = new ChromeOptions();
+            options.AddArguments("--lang=sv");
+            var webdriver = new ChromeDriver(options);
             webdriver.Url = url;
             webdriver.Navigate();
 
